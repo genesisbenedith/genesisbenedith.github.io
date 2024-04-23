@@ -1,0 +1,593 @@
+.mediaViewInfo {
+	--web-view-name: portfolio – app;
+	--web-view-id: portfolio__app;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: fit;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: portfolio__app;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#portfolio__app {
+	position: absolute;
+	width: 1920px;
+	height: 1500px;
+	background-color: rgba(244,244,244,1);
+	overflow: hidden;
+	--web-view-name: portfolio – app;
+	--web-view-id: portfolio__app;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: fit;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+@keyframes  {
+
+
+}
+#portfolio_options_p {
+	position: absolute;
+	width: 441px;
+	height: 75px;
+	left: 740px;
+	top: 480px;
+	overflow: visible;
+}
+#Rectangle_4_p {
+	fill: rgba(0,0,0,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_4_p {
+	position: absolute;
+	overflow: visible;
+	width: 102px;
+	height: 75px;
+	left: 203px;
+	top: 0px;
+}
+#All_p {
+	left: 0px;
+	top: 19px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	height: 37px;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: portfolio.html;
+	cursor: pointer;
+	line-height: 108px;
+	margin-top: -40.5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Web_p {
+	left: 99px;
+	top: 19px;
+	position: absolute;
+	overflow: visible;
+	width: 63px;
+	height: 37px;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: portfolio___web.html;
+	cursor: pointer;
+	line-height: 108px;
+	margin-top: -40.5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#App_p {
+	left: 224px;
+	top: 19px;
+	position: absolute;
+	overflow: visible;
+	width: 61px;
+	height: 37px;
+	line-height: 108px;
+	margin-top: -40.5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(255,255,255,1);
+}
+#Notion_p {
+	left: 347px;
+	top: 19px;
+	position: absolute;
+	overflow: visible;
+	width: 95px;
+	height: 37px;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: portfolio___notion.html;
+	cursor: pointer;
+	line-height: 108px;
+	margin-top: -40.5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Portfolio_p {
+	left: 820px;
+	top: 231px;
+	position: absolute;
+	overflow: visible;
+	width: 282px;
+	height: 84px;
+	line-height: 108px;
+	margin-top: -24px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#Most_Recent_Projects_p {
+	left: 792px;
+	top: 328px;
+	position: absolute;
+	overflow: visible;
+	width: 338px;
+	height: 43px;
+	line-height: 108px;
+	margin-top: -39px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(127,139,175,1);
+}
+#ig_follower_checker_p {
+	position: absolute;
+	width: 610px;
+	height: 554px;
+	left: 268px;
+	top: 665px;
+	overflow: visible;
+}
+#Rectangle_7_p {
+	fill: transparent;
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_7_p {
+	position: absolute;
+	overflow: visible;
+	width: 610px;
+	height: 554px;
+	left: 0px;
+	top: 0px;
+}
+#solen-feyissa-KWZa42a1kds-unsp_qa {
+	position: absolute;
+	width: 504px;
+	height: 240px;
+	left: 53px;
+	top: 45px;
+	overflow: visible;
+}
+#Instagram_Follower_Checker_qb {
+	left: 53px;
+	top: 330px;
+	position: absolute;
+	overflow: visible;
+	width: 445px;
+	height: 43px;
+	line-height: 108px;
+	margin-top: -39px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+}
+#Python_JavaScript_qc {
+	left: 53px;
+	top: 373px;
+	position: absolute;
+	overflow: visible;
+	width: 406px;
+	height: 43px;
+	line-height: 40px;
+	margin-top: -5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(127,139,175,1);
+}
+#ig_demo_qd {
+	position: absolute;
+	width: 119px;
+	height: 35px;
+	left: 53px;
+	top: 456px;
+	overflow: visible;
+}
+#Demo_qe {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 106px;
+	height: 35px;
+	line-height: 40px;
+	margin-top: -7.5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	color: rgba(127,139,175,1);
+}
+#MDI__arrow-right_qf {
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	left: 91px;
+	top: 3.5px;
+	overflow: visible;
+}
+#Boundary_qg {
+	opacity: 0;
+	fill: rgba(127,139,175,1);
+	stroke: rgba(0,0,0,0);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Boundary_qg {
+	position: absolute;
+	overflow: visible;
+	width: 28px;
+	height: 28px;
+	left: 0px;
+	top: 0px;
+}
+#Path__arrow-right_qh {
+	fill: rgba(127,139,175,1);
+}
+.Path__arrow-right_qh {
+	overflow: visible;
+	position: absolute;
+	width: 19.84px;
+	height: 19.84px;
+	left: 4px;
+	top: 4px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#ai_cats_vs_dogs_qi {
+	position: absolute;
+	width: 610px;
+	height: 554px;
+	left: 988px;
+	top: 664px;
+	overflow: visible;
+}
+#Rectangle_12_qj {
+	fill: transparent;
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_12_qj {
+	position: absolute;
+	overflow: visible;
+	width: 610px;
+	height: 554px;
+	left: 0px;
+	top: 0px;
+}
+#n_407d01d62f8c8493b3d0494ccca4_qk {
+	position: absolute;
+	width: 504px;
+	height: 240px;
+	left: 53px;
+	top: 45px;
+	overflow: visible;
+}
+#Cat_vs_Dog_Image_Recognition_ql {
+	left: 53px;
+	top: 330px;
+	position: absolute;
+	overflow: visible;
+	width: 505px;
+	height: 43px;
+	line-height: 108px;
+	margin-top: -39px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+}
+#Python_Numpy_Panda_Keras_qm {
+	left: 53px;
+	top: 373px;
+	position: absolute;
+	overflow: visible;
+	width: 505px;
+	height: 43px;
+	line-height: 40px;
+	margin-top: -5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(127,139,175,1);
+}
+#ai_demo_qn {
+	position: absolute;
+	width: 119px;
+	height: 35px;
+	left: 53px;
+	top: 456px;
+	overflow: visible;
+}
+#Demo_qo {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 106px;
+	height: 35px;
+	line-height: 40px;
+	margin-top: -7.5px;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	color: rgba(127,139,175,1);
+}
+#MDI__arrow-right_qp {
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	left: 91px;
+	top: 3.5px;
+	overflow: visible;
+}
+#Boundary_qq {
+	opacity: 0;
+	fill: rgba(127,139,175,1);
+	stroke: rgba(0,0,0,0);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Boundary_qq {
+	position: absolute;
+	overflow: visible;
+	width: 28px;
+	height: 28px;
+	left: 0px;
+	top: 0px;
+}
+#Path__arrow-right_qr {
+	fill: rgba(127,139,175,1);
+}
+.Path__arrow-right_qr {
+	overflow: visible;
+	position: absolute;
+	width: 19.84px;
+	height: 19.84px;
+	left: 4px;
+	top: 4px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#header_qs {
+	position: absolute;
+	width: 1920px;
+	height: 150px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_2_qt {
+	fill: rgba(255,255,255,1);
+}
+.Rectangle_2_qt {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 150px;
+	left: 0px;
+	top: 0px;
+}
+#Genesis_Benedith_qu {
+	left: 174px;
+	top: 41px;
+	position: absolute;
+	overflow: visible;
+	width: 449px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 50px;
+	color: rgba(0,0,0,1);
+	letter-spacing: 0.1px;
+}
+#Home_qv {
+	left: 847px;
+	top: 61px;
+	position: absolute;
+	overflow: visible;
+	width: 93px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: index.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+	letter-spacing: 0.1px;
+}
+#Portfolio_qw {
+	left: 1488px;
+	top: 61px;
+	position: absolute;
+	overflow: visible;
+	width: 130px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: portfolio.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+	letter-spacing: 0.1px;
+}
+#Contact_qx {
+	left: 1672px;
+	top: 61px;
+	position: absolute;
+	overflow: visible;
+	width: 126px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+	letter-spacing: 0.1px;
+}
+#Skills_qy {
+	left: 1143px;
+	top: 61px;
+	position: absolute;
+	overflow: visible;
+	width: 80px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: skills.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+	letter-spacing: 0.1px;
+}
+#Experience_qz {
+	left: 1277px;
+	top: 61px;
+	position: absolute;
+	overflow: visible;
+	width: 170px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: background___experience.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+	letter-spacing: 0.1px;
+}
+#About_q {
+	left: 994px;
+	top: 61px;
+	position: absolute;
+	overflow: visible;
+	width: 95px;
+	white-space: nowrap;
+	--web-animation: fadein undefineds undefined;
+	--web-action-type: page;
+	--web-action-target: about.html;
+	cursor: pointer;
+	text-align: left;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+	letter-spacing: 0.1px;
+}
