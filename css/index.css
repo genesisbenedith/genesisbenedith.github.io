@@ -9,6 +9,15 @@
 :root {
 	--web-view-ids: index;
 }
+#contact {
+    width: 100%; /* Instead of a fixed width */
+}
+
+.Rectangle_24 {
+    width: 100%; /* Make the rectangle fill the width of its container */
+    height: auto; /* Adjust height automatically */
+}
+
 * {
 	margin: 0;
 	padding: 0;
