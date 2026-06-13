@@ -905,6 +905,14 @@
 				}
 			}
 
+			img.gold {
+				filter: sepia(0.28) saturate(1.19) hue-rotate(-12deg) brightness(0.96);
+				transition: filter 0.4s ease;
+			}
+			img.gold:hover {
+				filter: none;
+			}
+
 			/* ── VISITORS ── */
 			.visit-counter {
 				display: flex;
@@ -943,7 +951,7 @@
 			<ul class="nav-links">
 				<li><a href="#about">About</a></li>
 				<li><a href="#expertise">Expertise</a></li>
-				<li><a href="#projects">Work</a></li>
+				<li><a href="#projects">Projects</a></li>
 				<li><a href="#community">Community</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
@@ -979,7 +987,11 @@
 						<div class="polaroid-inner">
 							<div class="polaroid-front">
 								<div class="polaroid-img">
-									<img src="src/img/te_engineer_mentor.jpeg" alt="" />
+									<img
+										class="gold"
+										src="src/img/te_engineer_mentor.jpeg"
+										alt=""
+									/>
 								</div>
 							</div>
 							<div class="polaroid-back">
@@ -994,7 +1006,11 @@
 						<div class="polaroid-inner">
 							<div class="polaroid-front">
 								<div class="polaroid-img">
-									<img src="src/img/sims_honors_presentation.jpeg" alt="" />
+									<img
+										class="gold"
+										src="src/img/sims_honors_presentation.jpeg"
+										alt=""
+									/>
 								</div>
 							</div>
 							<div class="polaroid-back">
@@ -1009,7 +1025,11 @@
 						<div class="polaroid-inner">
 							<div class="polaroid-front">
 								<div class="polaroid-img">
-									<img src="src/img/girls_who_code_selfie.jpeg" alt="" />
+									<img
+										class="gold"
+										src="src/img/girls_who_code_selfie.jpeg"
+										alt=""
+									/>
 								</div>
 							</div>
 							<div class="polaroid-back">
@@ -1022,6 +1042,7 @@
 							<div class="polaroid-front">
 								<div class="polaroid-img">
 									<img
+										class="gold"
 										src="src/img/college_of_science_commencement.JPG"
 										alt=""
 									/>
@@ -1064,33 +1085,35 @@
 				<div class="about-grid">
 					<div class="reveal">
 						<h2 class="about-headline">
-							I build the <em>infrastructure</em><br />of tomorrow.
+							Building software <em>solutions</em><br />for tomorrow.
 						</h2>
 						<div class="about-body">
 							<p>
-								From the Bronx to the cloud — I'm a software and MLOps engineer
-								who believes the most powerful systems are the ones that run so
-								well, no one notices them. I specialize in KPI pipelines, API
-								services, and automation workflows that quietly hold enterprise
-								teams together.
+								From the Bronx to the cloud, I'm a software engineer focused on
+								automation, infrastructure, and the data systems that keep
+								organizations moving. Whether it's automating repetitive
+								processes, developing internal tools, or creating data workflows
+								that support decision-making, I'm motivated by solving practical
+								problems with thoughtful engineering.
 							</p>
 							<p>
-								I hold a CS degree from the University of Arizona and a graduate
-								background in Information Science with a machine learning
-								specialization. Currently at TE Connectivity, I architect the
-								data infrastructure that keeps decisions moving at scale.
+								I earned my Computer Science degree from the University of
+								Arizona and am continuing my studies in Information Science with
+								a machine learning focus. At TE Connectivity, I build automation
+								solutions, data pipelines, and internal platforms that support
+								engineering and business operations at scale.
 							</p>
 							<p>
-								But I've never been just an engineer. I'm a community builder, a
-								storyteller, and someone who believes technology is most
-								powerful when it reaches the right hands — especially the ones
-								that weren't supposed to have it.
+								Outside of engineering, I invest heavily in community. Through
+								mentorship, speaking, technical writing, and initiatives like
+								Her Code Kitchen, I aim to help create the opportunities and
+								support systems that helped me get here.
 							</p>
 						</div>
 					</div>
 					<div class="about-milestones">
 						<div class="milestone reveal reveal-delay-1">
-							<div class="milestone-value">BX → NYC</div>
+							<div class="milestone-value">BX, NYC</div>
 							<div class="milestone-label">
 								Bronx-born. New York City based. Collaborating globally from the
 								city that built me.
@@ -1107,7 +1130,7 @@
 							<div class="milestone-value">Open</div>
 							<div class="milestone-label">
 								For collaboration, mentorship, and conversations about what
-								we're building — and for whom.
+								we're building and for whom.
 							</div>
 						</div>
 					</div>
@@ -1223,7 +1246,7 @@
 		<!-- ── PROJECTS ── -->
 		<section id="projects">
 			<div class="container">
-				<p class="label reveal">Selected Work</p>
+				<p class="label reveal">Personal Projects</p>
 				<div class="projects-grid">
 					<div class="project-card card--fun reveal">
 						<p class="p-type p-type--fun">Mini Game · Just For Fun</p>
