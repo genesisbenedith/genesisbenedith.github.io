@@ -16,7 +16,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -487,6 +487,48 @@
 				gap: 0.85rem;
 			}
 
+			/* ── PROJECT CARD — FUN VARIANT ── */
+			.project-card.card--fun {
+				border-color: rgba(212, 168, 67, 0.1);
+			}
+
+			.project-card.card--fun::after {
+				background: linear-gradient(
+					to right,
+					transparent,
+					rgba(255, 160, 180, 0.7),
+					transparent
+				);
+			}
+
+			.project-card.card--fun:hover {
+				border-color: rgba(255, 140, 160, 0.35);
+			}
+
+			.p-type--fun {
+				color: #e8829a;
+			}
+
+			.p-tag-row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.4rem;
+				margin-top: 1.4rem;
+			}
+
+			.p-tag {
+				font-family: var(--mono);
+				font-size: 0.54rem;
+				letter-spacing: 0.06em;
+				padding: 0.22rem 0.55rem;
+				border: 1px solid rgba(232, 130, 154, 0.25);
+				color: #b07080;
+			}
+
+			.p-link--fun {
+				color: #e8a0b0;
+			}
+
 			/* ── COMMUNITY ── */
 			#community {
 				background: var(--surface);
@@ -757,12 +799,117 @@
 					text-align: center;
 				}
 			}
+
+			/* ── PHOTOS ── */
+			#photos {
+				background: var(--bg);
+				padding: 5rem 3.5rem 2rem;
+			}
+
+			.polaroid-grid {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				gap: 2rem;
+			}
+
+			.polaroid {
+				width: 207px;
+				height: 242px;
+				transform: rotate(var(--rot, 0deg));
+				transition:
+					transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+					box-shadow 0.35s;
+				perspective: 1000px;
+				flex-shrink: 0;
+				position: relative;
+				cursor: pointer;
+				box-shadow:
+					0 8px 32px rgba(0, 0, 0, 0.5),
+					0 2px 8px rgba(0, 0, 0, 0.3);
+			}
+
+			.polaroid:hover {
+				transform: rotate(0deg) scale(1.05);
+				z-index: 10;
+				box-shadow:
+					0 20px 56px rgba(0, 0, 0, 0.65),
+					0 4px 16px rgba(0, 0, 0, 0.4);
+			}
+
+			.polaroid-inner {
+				width: 100%;
+				height: 100%;
+				transform-style: preserve-3d;
+				transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+			}
+
+			.polaroid:hover .polaroid-inner {
+				transform: rotateY(180deg);
+			}
+
+			.polaroid-front,
+			.polaroid-back {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+			}
+
+			.polaroid-front {
+				background: #f5f0e8;
+				padding: 0.7rem 0.7rem 2.75rem;
+			}
+
+			.polaroid-img {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background: #ccc;
+			}
+
+			.polaroid-img img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.polaroid-back {
+				background: #ede8df;
+				transform: rotateY(180deg);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 1.5rem;
+			}
+
+			.polaroid-caption {
+				font-family: "Caveat", cursive;
+				font-size: 1.15rem;
+				font-weight: 600;
+				color: #3a3028;
+				text-align: center;
+				line-height: 1.6;
+			}
+
+			@media (max-width: 960px) {
+				#photos {
+					padding: 4rem 2rem 1rem;
+				}
+				.polaroid {
+					width: 168px;
+					height: 197px;
+				}
+			}
 		</style>
 	</head>
 	<body>
 		<!-- ── NAV ── -->
 		<nav id="nav">
-			<a href="#hero" class="nav-logo">G.E.B.</a>
+			<a href="#hero" class="nav-logo">G.B.</a>
 			<ul class="nav-links">
 				<li><a href="#about">About</a></li>
 				<li><a href="#expertise">Expertise</a></li>
@@ -791,6 +938,92 @@
 			<div class="scroll-hint">
 				<span>Scroll</span>
 				<div class="scroll-bar"></div>
+			</div>
+		</section>
+
+		<!-- ── PHOTOS ── -->
+		<section id="photos">
+			<div class="container">
+				<div class="polaroid-grid">
+					<div class="polaroid" style="--rot: -4deg">
+						<div class="polaroid-inner">
+							<div class="polaroid-front">
+								<div class="polaroid-img">
+									<img src="src/img/te_engineer_mentor.jpeg" alt="" />
+								</div>
+							</div>
+							<div class="polaroid-back">
+								<p class="polaroid-caption">
+									mentored TE Connectivity's interns for National Intern Day
+									2025
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="polaroid" style="--rot: 2.5deg">
+						<div class="polaroid-inner">
+							<div class="polaroid-front">
+								<div class="polaroid-img">
+									<img src="src/img/sims_honors_presentation.jpeg" alt="" />
+								</div>
+							</div>
+							<div class="polaroid-back">
+								<p class="polaroid-caption">
+									presented my UX & gaming research on The Sims at UA Franke
+									Honors Pinnacle 2024
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="polaroid" style="--rot: -1.5deg">
+						<div class="polaroid-inner">
+							<div class="polaroid-front">
+								<div class="polaroid-img">
+									<img src="src/img/girls_who_code_selfie.jpeg" alt="" />
+								</div>
+							</div>
+							<div class="polaroid-back">
+								<p class="polaroid-caption">rocking Girls Who Code swag</p>
+							</div>
+						</div>
+					</div>
+					<div class="polaroid" style="--rot: 3.5deg">
+						<div class="polaroid-inner">
+							<div class="polaroid-front">
+								<div class="polaroid-img">
+									<img
+										src="src/img/college_of_science_commencement.JPG"
+										alt=""
+									/>
+								</div>
+							</div>
+							<div class="polaroid-back">
+								<p class="polaroid-caption">
+									graduated from the College of Science at the University of
+									Arizona (2025)
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="polaroid" style="--rot: -2.5deg">
+						<div class="polaroid-inner">
+							<div class="polaroid-front">
+								<div class="polaroid-img">
+									<img
+										src="src/img/computer_science_commencement.jpeg"
+										alt=""
+									/>
+								</div>
+							</div>
+							<div class="polaroid-back">
+								<p class="polaroid-caption">
+									celebrating graduation with the Department of Computer Science
+									at the University of Arizona (2025)
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -859,18 +1092,40 @@
 				<div class="expertise-grid">
 					<div class="expertise-card reveal">
 						<div class="e-icon">⚡</div>
-						<h3 class="e-title">MLOps &amp; Data Engineering</h3>
+						<h3 class="e-title">
+							Software Engineering &amp; Application Development
+						</h3>
 						<p class="e-desc">
-							Building the pipelines that move data from raw to ready. KPI
-							automation, model monitoring, and the invisible scaffolding that
-							makes ML systems production-worthy — and actually trustworthy.
+							Building software from concept to production across web, API,
+							mobile, and cloud environments. Focused on maintainable
+							architecture, secure systems, and products that solve real
+							problems.
 						</p>
 						<div class="tag-row">
 							<span class="tag">Python</span>
-							<!-- <span class="tag">Airflow</span> -->
-							<!-- <span class="tag">dbt</span> -->
+							<span class="tag">Java</span>
+							<span class="tag">JavaScript</span>
+							<span class="tag">React</span>
+							<span class="tag">WebSocket</span>
+							<span class="tag">Full-Stack Development</span>
+							<span class="tag">Android Development</span>
+						</div>
+					</div>
+					<div class="expertise-card reveal">
+						<div class="e-icon">🤖</div>
+						<h3 class="e-title">MLOps &amp; Data Engineering</h3>
+						<p class="e-desc">
+							Building the pipelines that move data from raw to ready. Focus on
+							production ML and AI applications.
+						</p>
+						<div class="tag-row">
+							<span class="tag">Python</span>
 							<span class="tag">MLflow</span>
-							<!-- <span class="tag">Spark</span> -->
+							<span class="tag">PySpark</span>
+							<span class="tag">MongoDB</span>
+							<span class="tag">FastAPI</span>
+							<span class="tag">Prefect</span>
+							<span class="tag">Vector Search</span>
 						</div>
 					</div>
 
@@ -878,33 +1133,57 @@
 						<div class="e-icon">🛠</div>
 						<h3 class="e-title">DevOps &amp; Automation Infrastructure</h3>
 						<p class="e-desc">
-							CI/CD pipelines, containerized deployments, and cloud automation
-							that lets teams ship fast and sleep soundly. Systems that scale
-							because they were engineered — not because they got lucky.
+							Automating infrastructure operations through CI/CD,
+							Infrastructure-as-Code, configuration management, cloud platforms,
+							and operational orchestration.
 						</p>
 						<div class="tag-row">
-							<span class="tag">RedHat Ansible</span>
+							<span class="tag">RedHat Ansible Automation & AWX</span>
+							<span class="tag">RedHat Ansible Enterprise Linux (RHEL)</span>
 							<span class="tag">PowerShell Universal</span>
-							<!-- <span class="tag">Kubernetes</span>
-            <span class="tag">Terraform</span>
-            <span class="tag"></span> -->
+							<span class="tag">Continuous Integration/Deployment (CI/CD)</span>
+							<span class="tag">Infrastructure as Code</span>
+							<span class="tag">Configuration Management</span>
+							<span class="tag">Observability</span>
+						</div>
+					</div>
+
+					<div class="expertise-card reveal reveal-delay-2">
+						<div class="e-icon">📊</div>
+						<h3 class="e-title">Analytics & Data Engineering</h3>
+						<p class="e-desc">
+							Transforming operational data into actionable insights through KPI
+							pipelines, reporting automation, dashboarding, and data systems
+							that support business and engineering decisions.
+						</p>
+						<div class="tag-row">
+							<span class="tag">Power BI</span>
+							<span class="tag">SQL</span>
+							<span class="tag">OpenPyXL</span>
+							<span class="tag">MongoDB</span>
+							<span class="tag">REST</span>
+							<span class="tag">Business Intelligence</span>
+							<span class="tag">KPI Reporting</span>
+							<span class="tag">Data Warehousing</span>
 						</div>
 					</div>
 
 					<div class="expertise-card reveal reveal-delay-2">
 						<div class="e-icon">🔗</div>
-						<h3 class="e-title">API Services &amp; Automation</h3>
+						<h3 class="e-title">
+							Platform Engineering & Internal Developer Tools
+						</h3>
 						<p class="e-desc">
-							Designing and shipping REST APIs and automation workflows that
-							connect complex systems cleanly. Built for reliability. Maintained
-							with intention. Documented like someone else will have to read it.
+							Creating developer platforms, internal services, and secure
+							automation workflows that streamline operations, improve developer
+							productivity and operational efficiency.
 						</p>
 						<div class="tag-row">
-							<!-- <span class="tag">FastAPI</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">REST</span> -->
+							<span class="tag">API Development</span>
+							<span class="tag">Identity & Access Management (IAM)</span>
+							<span class="tag">Privileged Access Management (PAM)</span>
+							<span class="tag">Workflow Automation</span>
+							<span class="tag">Enterprise Integrations</span>
 						</div>
 					</div>
 				</div>
@@ -916,6 +1195,28 @@
 			<div class="container">
 				<p class="label reveal">Selected Work</p>
 				<div class="projects-grid">
+					<div class="project-card card--fun reveal">
+						<p class="p-type p-type--fun">Mini Game · Just For Fun</p>
+						<h3 class="p-title">Love Island S8 — MASH</h3>
+						<p class="p-desc">
+							A fully interactive MASH game built in React around the real Love
+							Island (US) Season 8 Fiji cast. Pick 4 islanders, draw the spiral,
+							watch the elimination animation, and get your fate — partner,
+							home, kids, vibe, and all. Shareable result card included.
+						</p>
+						<div class="p-tag-row">
+							<span class="p-tag">React</span>
+							<span class="p-tag">Vite</span>
+							<span class="p-tag">JavaScript</span>
+						</div>
+						<a
+							href="https://genesisbenedith.github.io/projects/love-island-s8-mash/"
+							class="p-link p-link--fun"
+							target="_blank"
+							rel="noopener"
+							>Play the game →</a
+						>
+					</div>
 					<div class="project-card reveal">
 						<p class="p-type">Open Source</p>
 						<h3 class="p-title">tech-event-notes</h3>
@@ -926,24 +1227,12 @@
 							to markdown, ready to fork and learn from.
 						</p>
 						<a
-							href="https://github.com"
+							href="https://github.com/genesisbenedith/tech-event-notes"
 							class="p-link"
 							target="_blank"
 							rel="noopener"
 							>View on GitHub →</a
 						>
-					</div>
-
-					<div class="project-card reveal reveal-delay-1">
-						<p class="p-type">Enterprise · TE Connectivity</p>
-						<h3 class="p-title">KPI Pipeline Architecture</h3>
-						<p class="p-desc">
-							End-to-end automation of enterprise KPI reporting — from raw
-							operational data to executive dashboards. Built to run silently,
-							flag intelligently, and scale without asking permission. The kind
-							of infrastructure that earns trust over time.
-						</p>
-						<a href="#contact" class="p-link">Get in touch →</a>
 					</div>
 
 					<div class="project-card reveal">
@@ -955,24 +1244,33 @@
 							and no seat at the table is assumed — it's built from scratch.
 							Currently exploring nonprofit structure.
 						</p>
-						<a href="#contact" class="p-link">Learn more →</a>
-					</div>
-
-					<div class="project-card reveal reveal-delay-1">
-						<p class="p-type">Field Notes · NYC Tech Week 2026</p>
-						<h3 class="p-title">On the Ground at Tech Week</h3>
-						<p class="p-desc">
-							Girls Who Code × IBM AI. FIT fashion tech. MongoDB + AWS
-							workshops. Credly certifications earned. Documenting what the
-							industry is building next — and who's shaping the conversation.
-							Notes public on GitHub.
-						</p>
 						<a
-							href="https://github.com"
+							href="https://hercodekitchen.substack.com"
 							class="p-link"
 							target="_blank"
 							rel="noopener"
-							>Read the notes →</a
+							>View on Substack →</a
+						>
+					</div>
+					<div class="project-card reveal">
+						<p class="p-type">Open Source · Social Media</p>
+						<h3 class="p-title">Instagram Follower Checker</h3>
+						<p class="p-desc">
+							A dual-language CLI tool that parses your Instagram data export
+							and surfaces every account you follow that isn't following you
+							back. No login credentials, no third-party services — just your
+							own JSON data in, clean CSV or TXT out.
+						</p>
+						<div class="p-tag-row">
+							<span class="tag">Python</span>
+							<span class="tag">Node.js</span>
+						</div>
+						<a
+							href="https://github.com/genesisbenedith/ig_follower_checker"
+							class="p-link"
+							target="_blank"
+							rel="noopener"
+							>View on GitHub →</a
 						>
 					</div>
 				</div>
@@ -1014,10 +1312,9 @@
 						<p class="c-desc">
 							The world's largest tech conference for Black technologists. Being
 							part of this community means being part of the active reimagining
-							of who gets to build — and lead — the industry.
+							of who gets to build and lead the industry.
 						</p>
 					</div>
-
 					<div class="community-card reveal reveal-delay-2">
 						<span class="c-badge">Community Member</span>
 						<h3 class="c-name">ColorStack</h3>
@@ -1041,6 +1338,30 @@
 							built into something more permanent — stay tuned.
 						</p>
 					</div>
+
+					<div class="community-card reveal reveal-delay-4">
+						<span class="c-badge">Collegiate Member</span>
+						<h3 class="c-name">National Society of Black Engineers</h3>
+						<p class="c-role">
+							University of Arizona Communications Chair (23-24)
+						</p>
+						<p class="c-desc">
+							A network for Black engineers focused on academic excellence,
+							professional development, and community support across STEM.
+						</p>
+					</div>
+
+					<div class="community-card reveal reveal-delay-5">
+						<span class="c-badge">Collegiate Member</span>
+						<h3 class="c-name">Society of Hispanic Professional Engineers</h3>
+						<p class="c-role">
+							Pima Community College Chapter President (21-22)
+						</p>
+						<p class="c-desc">
+							A community empowering Hispanic engineers through mentorship,
+							leadership development, and pathways into technology careers.
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1050,17 +1371,18 @@
 			<div class="container">
 				<p class="contact-eyebrow reveal">Let's connect</p>
 				<h2 class="contact-headline reveal">
-					Let's build<br />something <em>real</em>.
+					Let's build<br /><em>real</em> connections.
 				</h2>
 				<p class="contact-desc reveal">
-					Whether it's a pipeline, a collaboration, a mentorship conversation,
-					or just a good idea that needs the right hands — I'm open to building
-					with people who care about doing it right.
+					Whether it's a mentorship conversation, a community collab, or just
+					someone who needed to see themselves reflected in this field, reach
+					out! I built my career on people who made space. Let's connect on
+					LinkedIn.
 				</p>
 				<div class="contact-links reveal">
-					<a href="mailto:hello@yourdomain.com" class="contact-link"
+					<!-- <a href="mailto:hello@yourdomain.com" class="contact-link"
 						>✉&nbsp; Email</a
-					>
+					> -->
 					<a
 						href="https://linkedin.com/in/genesisbenedith"
 						class="contact-link"
@@ -1092,10 +1414,10 @@
 				</div>
 				<footer class="reveal">
 					<span class="footer-name"
-						>Genesis Benedith. &mdash; New York City</span
+						>Genesis Benedith. &mdash; Based in New York City</span
 					>
 					<span class="footer-note"
-						>Built with intention &nbsp;·&nbsp; &copy; 2026</span
+						>Genesis Elizabeth Benedith &nbsp;·&nbsp; &copy; 2026</span
 					>
 				</footer>
 			</div>
