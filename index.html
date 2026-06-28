@@ -840,7 +840,7 @@
 			.polaroid {
 				width: 207px;
 				background: #f5f0e8;
-				padding: 0.7rem 0.7rem 1rem;
+				padding: 0.7rem;
 				transform: rotate(var(--rot, 0deg));
 				transition:
 					transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -853,7 +853,7 @@
 			}
 
 			.polaroid:hover {
-				transform: rotate(0deg) scale(1.04);
+				transform: rotate(0deg) scale(1.18);
 				z-index: 10;
 				box-shadow:
 					0 20px 48px rgba(43, 35, 28, 0.22),
@@ -872,27 +872,12 @@
 				height: 100%;
 				object-fit: cover;
 				display: block;
-				filter: grayscale(1);
 				transform: scale(1);
-				transition:
-					filter 0.5s ease,
-					transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+				transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 			}
 
 			.polaroid:hover .polaroid-img img {
-				filter: grayscale(0);
-				transform: scale(1.08);
-			}
-
-			.polaroid-caption {
-				font-family: "Shadows Into Light", cursive;
-				font-size: 1rem;
-				font-weight: 400;
-				color: #3a3028;
-				text-align: center;
-				line-height: 1.4;
-				margin-top: 0.65rem;
-				padding: 0 0.2rem;
+				transform: scale(1.1);
 			}
 
 			@media (max-width: 960px) {
@@ -1049,10 +1034,9 @@
 				</p>
 				<h1 class="hero-name"><span class="glow">Gen</span>esis</h1>
 				<p class="hero-tagline">
-					By day, I build automation and data infrastructure at
-					<em>TE Connectivity</em>. By night, I build satirical dating apps,
-					Love Island games, and other strange little internet experiments.
-					Occasionally both happen in the <em>same sprint</em>.
+					Software engineer and technical writer based in New York City,
+					currently working on automation infrastructure at
+					<em>TE Connectivity</em>.
 				</p>
 				<!-- <p class="hero-sub">
 					New York City &nbsp;·&nbsp; Bronx-Born &nbsp;·&nbsp; Builder
@@ -1364,42 +1348,26 @@
 						<div class="polaroid-img">
 							<img src="src/img/te_engineer_mentor.jpeg" alt="" />
 						</div>
-						<p class="polaroid-caption">
-							mentored TE Connectivity's interns for National Intern Day 2025
-						</p>
 					</div>
 					<div class="polaroid" style="--rot: 2.5deg">
 						<div class="polaroid-img">
 							<img src="src/img/sims_honors_presentation.jpeg" alt="" />
 						</div>
-						<p class="polaroid-caption">
-							presented my UX & gaming research on The Sims at UA Franke Honors
-							Pinnacle 2024
-						</p>
 					</div>
 					<div class="polaroid" style="--rot: -1.5deg">
 						<div class="polaroid-img">
 							<img src="src/img/girls_who_code_selfie.jpeg" alt="" />
 						</div>
-						<p class="polaroid-caption">rocking Girls Who Code swag</p>
 					</div>
 					<div class="polaroid" style="--rot: 3.5deg">
 						<div class="polaroid-img">
 							<img src="src/img/college_of_science_commencement.JPG" alt="" />
 						</div>
-						<p class="polaroid-caption">
-							graduated from the College of Science at the University of Arizona
-							(2025)
-						</p>
 					</div>
 					<div class="polaroid" style="--rot: -2.5deg">
 						<div class="polaroid-img">
 							<img src="src/img/computer_science_commencement.jpeg" alt="" />
 						</div>
-						<p class="polaroid-caption">
-							celebrating graduation with the Department of Computer Science at
-							the University of Arizona (2025)
-						</p>
 					</div>
 				</div>
 			</div>
@@ -1723,9 +1691,8 @@
 						<h3 class="p-title">tech-event-notes</h3>
 						<p class="p-desc">
 							An open-source GitHub repository of structured notes from tech
-							events across NYC and beyond — built for CS students and
-							early-career professionals who weren't in the room. Voice-to-text
-							to markdown, ready to fork and learn from.
+							events across NYC and beyond, built for CS students and
+							early-career professionals who weren't in the room.
 						</p>
 						<a
 							href="https://github.com/genesisbenedith/tech-event-notes"
@@ -1741,9 +1708,7 @@
 						<h3 class="p-title">Her Code Kitchen</h3>
 						<p class="p-desc">
 							A community initiative at the intersection of technology and
-							sisterhood. Where STEM meets access, mentorship meets ambition,
-							and no seat at the table is assumed — it's built from scratch.
-							Currently exploring nonprofit structure.
+							sisterhood.
 						</p>
 						<a
 							href="https://hercodekitchen.substack.com"
