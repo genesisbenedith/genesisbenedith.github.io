@@ -16,7 +16,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -30,16 +30,16 @@
 			}
 
 			:root {
-				--bg: #080b18;
-				--surface: #0d1022;
-				--card: #111528;
-				--border: rgba(212, 168, 67, 0.13);
-				--gold: #d4a843;
-				--gold-light: #f0c87a;
-				--champagne: #c4a882;
-				--purple: #7b68ae;
-				--text: #eae0d3;
-				--text-muted: #8e849a;
+				--bg: #fffcfa;
+				--surface: #fdf4f1;
+				--card: #ffffff;
+				--border: rgba(184, 134, 46, 0.22);
+				--gold: #a8782a;
+				--gold-light: #c9963e;
+				--champagne: #a8835c;
+				--rose: #c2607c;
+				--text: #2b231c;
+				--text-muted: #756a60;
 
 				--display: "Cormorant Garamond", Georgia, serif;
 				--body: "DM Sans", system-ui, sans-serif;
@@ -74,7 +74,7 @@
 			}
 
 			nav.scrolled {
-				background: rgba(8, 11, 24, 0.92);
+				background: rgba(255, 252, 250, 0.85);
 				backdrop-filter: blur(12px);
 				border-bottom: 1px solid var(--border);
 			}
@@ -179,9 +179,34 @@
 				font-size: 0.6rem;
 				letter-spacing: 0.18em;
 				text-transform: uppercase;
-				color: var(--purple);
+				color: var(--rose);
 				opacity: 0;
 				animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+			}
+
+			.hero-cta {
+				display: inline-flex;
+				align-items: center;
+				margin-top: 2.25rem;
+				padding: 0.85rem 1.85rem;
+				border: 1px solid var(--gold-light);
+				border-radius: 999px;
+				font-family: var(--mono);
+				font-size: 0.66rem;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--gold-light);
+				text-decoration: none;
+				opacity: 0;
+				animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.45s forwards;
+				transition:
+					background 0.25s,
+					color 0.25s;
+			}
+
+			.hero-cta:hover {
+				background: var(--gold-light);
+				color: var(--bg);
 			}
 
 			.scroll-hint {
@@ -225,6 +250,8 @@
 			.container {
 				max-width: 1200px;
 				margin: 0 auto;
+				position: relative;
+				z-index: 1;
 			}
 
 			.label {
@@ -250,6 +277,8 @@
 			/* ── ABOUT ── */
 			#about {
 				background: var(--bg);
+				position: relative;
+				overflow: hidden;
 			}
 
 			.about-grid {
@@ -336,22 +365,23 @@
 			.expertise-grid {
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
-				border: 1px solid var(--border);
+				gap: 1px;
+				background: var(--border);
 				margin-top: 1rem;
 			}
 
 			.expertise-card {
 				padding: 2.75rem;
-				border-right: 1px solid var(--border);
-				transition: background 0.3s;
-			}
-
-			.expertise-card:last-child {
-				border-right: none;
+				background: var(--bg);
+				border-top: 2px solid transparent;
+				transition:
+					border-color 0.3s,
+					transform 0.3s;
 			}
 
 			.expertise-card:hover {
-				background: var(--card);
+				border-top-color: var(--gold-light);
+				transform: translateY(-3px);
 			}
 
 			.e-icon {
@@ -437,7 +467,7 @@
 			}
 
 			.project-card:hover {
-				border-color: rgba(212, 168, 67, 0.3);
+				border-color: rgba(184, 134, 46, 0.45);
 				transform: translateY(-4px);
 			}
 
@@ -489,24 +519,24 @@
 
 			/* ── PROJECT CARD — FUN VARIANT ── */
 			.project-card.card--fun {
-				border-color: rgba(212, 168, 67, 0.1);
+				border-color: rgba(184, 134, 46, 0.18);
 			}
 
 			.project-card.card--fun::after {
 				background: linear-gradient(
 					to right,
 					transparent,
-					rgba(255, 160, 180, 0.7),
+					rgba(212, 140, 160, 0.85),
 					transparent
 				);
 			}
 
 			.project-card.card--fun:hover {
-				border-color: rgba(255, 140, 160, 0.35);
+				border-color: rgba(212, 140, 160, 0.45);
 			}
 
 			.p-type--fun {
-				color: #e8829a;
+				color: var(--rose);
 			}
 
 			.p-tag-row {
@@ -521,12 +551,12 @@
 				font-size: 0.54rem;
 				letter-spacing: 0.06em;
 				padding: 0.22rem 0.55rem;
-				border: 1px solid rgba(232, 130, 154, 0.25);
-				color: #b07080;
+				border: 1px solid rgba(212, 140, 160, 0.4);
+				color: var(--rose);
 			}
 
 			.p-link--fun {
-				color: #e8a0b0;
+				color: var(--rose);
 			}
 
 			/* ── COMMUNITY ── */
@@ -572,7 +602,7 @@
 			}
 
 			.community-card:hover {
-				border-color: rgba(123, 104, 174, 0.45);
+				border-color: rgba(212, 140, 160, 0.5);
 			}
 
 			.c-badge {
@@ -581,8 +611,8 @@
 				letter-spacing: 0.16em;
 				text-transform: uppercase;
 				padding: 0.3rem 0.7rem;
-				border: 1px solid rgba(123, 104, 174, 0.35);
-				color: var(--purple);
+				border: 1px solid rgba(212, 140, 160, 0.45);
+				color: var(--rose);
 				display: inline-block;
 				margin-bottom: 1.4rem;
 			}
@@ -777,13 +807,6 @@
 				.expertise-grid {
 					grid-template-columns: 1fr;
 				}
-				.expertise-card {
-					border-right: none;
-					border-bottom: 1px solid var(--border);
-				}
-				.expertise-card:last-child {
-					border-bottom: none;
-				}
 				.projects-grid {
 					grid-template-columns: 1fr;
 				}
@@ -810,62 +833,36 @@
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
-				align-items: center;
+				align-items: flex-start;
 				gap: 2rem;
 			}
 
 			.polaroid {
 				width: 207px;
-				height: 242px;
+				background: #f5f0e8;
+				padding: 0.7rem 0.7rem 1rem;
 				transform: rotate(var(--rot, 0deg));
 				transition:
 					transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
 					box-shadow 0.35s;
-				perspective: 1000px;
 				flex-shrink: 0;
 				position: relative;
-				cursor: pointer;
 				box-shadow:
-					0 8px 32px rgba(0, 0, 0, 0.5),
-					0 2px 8px rgba(0, 0, 0, 0.3);
+					0 8px 28px rgba(43, 35, 28, 0.16),
+					0 2px 8px rgba(43, 35, 28, 0.1);
 			}
 
 			.polaroid:hover {
-				transform: rotate(0deg) scale(1.05);
+				transform: rotate(0deg) scale(1.04);
 				z-index: 10;
 				box-shadow:
-					0 20px 56px rgba(0, 0, 0, 0.65),
-					0 4px 16px rgba(0, 0, 0, 0.4);
-			}
-
-			.polaroid-inner {
-				width: 100%;
-				height: 100%;
-				transform-style: preserve-3d;
-				transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-			}
-
-			.polaroid:hover .polaroid-inner {
-				transform: rotateY(180deg);
-			}
-
-			.polaroid-front,
-			.polaroid-back {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				backface-visibility: hidden;
-				-webkit-backface-visibility: hidden;
-			}
-
-			.polaroid-front {
-				background: #f5f0e8;
-				padding: 0.7rem 0.7rem 2.75rem;
+					0 20px 48px rgba(43, 35, 28, 0.22),
+					0 4px 16px rgba(43, 35, 28, 0.13);
 			}
 
 			.polaroid-img {
 				width: 100%;
-				height: 100%;
+				aspect-ratio: 1 / 1;
 				overflow: hidden;
 				background: #ccc;
 			}
@@ -875,24 +872,27 @@
 				height: 100%;
 				object-fit: cover;
 				display: block;
+				filter: grayscale(1);
+				transform: scale(1);
+				transition:
+					filter 0.5s ease,
+					transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 			}
 
-			.polaroid-back {
-				background: #ede8df;
-				transform: rotateY(180deg);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 1.5rem;
+			.polaroid:hover .polaroid-img img {
+				filter: grayscale(0);
+				transform: scale(1.08);
 			}
 
 			.polaroid-caption {
-				font-family: "Caveat", cursive;
-				font-size: 1.15rem;
-				font-weight: 600;
+				font-family: "Shadows Into Light", cursive;
+				font-size: 1rem;
+				font-weight: 400;
 				color: #3a3028;
 				text-align: center;
-				line-height: 1.6;
+				line-height: 1.4;
+				margin-top: 0.65rem;
+				padding: 0 0.2rem;
 			}
 
 			@media (max-width: 960px) {
@@ -901,16 +901,98 @@
 				}
 				.polaroid {
 					width: 168px;
-					height: 197px;
 				}
 			}
 
-			img.gold {
-				filter: sepia(0.28) saturate(1.19) hue-rotate(-12deg) brightness(0.96);
-				transition: filter 0.4s ease;
+			/* ── ABOUT BACKGROUND SKYLINE ── */
+			.skyline-bg {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				pointer-events: none;
+				z-index: 0;
 			}
-			img.gold:hover {
-				filter: none;
+
+			/* ── SKYLINE ── */
+			#skyline {
+				background: var(--bg);
+				padding: 4rem 0 1rem;
+			}
+
+			.skyline-wrap {
+				max-width: 1400px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			.skyline-svg {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.skyline-caption {
+				text-align: center;
+				font-family: var(--mono);
+				font-size: 0.6rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--text-muted);
+				margin-top: 1.5rem;
+				opacity: 0.75;
+			}
+
+			.glow-dot {
+				animation: skyTwinkle 3.4s ease-in-out infinite;
+			}
+
+			.glow-dot--gold {
+				fill: var(--gold-light);
+			}
+
+			.glow-dot--rose {
+				fill: var(--rose);
+			}
+
+			.roof-link {
+				stroke: var(--gold);
+				stroke-width: 0.7;
+				stroke-opacity: 0.26;
+			}
+
+			.skyline-beacon {
+				fill: var(--gold-light);
+				animation: beaconPulse 2.4s ease-in-out infinite;
+			}
+
+			@keyframes skyTwinkle {
+				0%,
+				100% {
+					opacity: 0.25;
+				}
+				50% {
+					opacity: 0.95;
+				}
+			}
+
+			@keyframes beaconPulse {
+				0%,
+				100% {
+					opacity: 0.55;
+				}
+				50% {
+					opacity: 1;
+				}
+			}
+
+			@media (max-width: 960px) {
+				#skyline {
+					padding: 3rem 0 0.5rem;
+				}
+				.skyline-wrap {
+					padding: 0 1.25rem;
+				}
 			}
 
 			/* ── VISITORS ── */
@@ -949,10 +1031,10 @@
 		<nav id="nav">
 			<a href="#hero" class="nav-logo">G.B.</a>
 			<ul class="nav-links">
-				<li><a href="#about">About</a></li>
-				<li><a href="#expertise">Expertise</a></li>
+				<!-- <li><a href="#about">About</a></li> -->
+				<!-- <li><a href="#expertise">Expertise</a></li> -->
 				<li><a href="#projects">Projects</a></li>
-				<li><a href="#community">Community</a></li>
+				<!-- <li><a href="#community">Community</a></li> -->
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
@@ -962,20 +1044,315 @@
 			<canvas id="constellation"></canvas>
 			<div class="hero-inner">
 				<p class="hero-eyebrow">
-					Software Engineer &nbsp;·&nbsp; DevOps &nbsp;·&nbsp; MLOps
+					Software Engineer &nbsp;·&nbsp; Computer Scientist &nbsp;·&nbsp; User
+					Experience Writer
 				</p>
 				<h1 class="hero-name"><span class="glow">Gen</span>esis</h1>
 				<p class="hero-tagline">
-					Building infrastructure that <em>scales</em>.&nbsp; Telling stories
-					that <em>matter</em>.
+					By day, I build automation and data infrastructure at
+					<em>TE Connectivity</em>. By night, I build satirical dating apps,
+					Love Island games, and other strange little internet experiments.
+					Occasionally both happen in the <em>same sprint</em>.
 				</p>
-				<p class="hero-sub">
+				<!-- <p class="hero-sub">
 					New York City &nbsp;·&nbsp; Bronx-Born &nbsp;·&nbsp; Builder
-				</p>
+				</p> -->
+				<!-- <a href="#contact" class="hero-cta">✉&nbsp; Say hi!</a> -->
 			</div>
 			<div class="scroll-hint">
 				<span>Scroll</span>
 				<div class="scroll-bar"></div>
+			</div>
+		</section>
+
+		<!-- ── SKYLINE ── -->
+		<section id="skyline">
+			<div class="skyline-wrap">
+				<svg
+					class="skyline-svg"
+					viewBox="0 0 1600 380"
+					preserveAspectRatio="xMidYMax meet"
+					role="img"
+					aria-label="A New York City skyline traced as a glowing gold outline, with two landmark towers and a scatter of constellation-style sparkle stars connecting the rooftops"
+				>
+					<defs>
+						<filter id="glowSoft" x="-60%" y="-60%" width="220%" height="220%">
+							<feGaussianBlur stdDeviation="2.1" result="blur" />
+							<feMerge>
+								<feMergeNode in="blur" />
+								<feMergeNode in="SourceGraphic" />
+							</feMerge>
+						</filter>
+						<filter
+							id="glowStrong"
+							x="-90%"
+							y="-90%"
+							width="280%"
+							height="280%"
+						>
+							<feGaussianBlur stdDeviation="4.2" result="blur" />
+							<feMerge>
+								<feMergeNode in="blur" />
+								<feMergeNode in="SourceGraphic" />
+							</feMerge>
+						</filter>
+					</defs>
+
+					<g
+						class="skyline-buildings"
+						fill="none"
+						stroke="var(--gold-light)"
+						stroke-width="1.3"
+						stroke-opacity="0.55"
+						filter="url(#glowSoft)"
+					>
+						<rect x="0" y="282" width="54" height="98" />
+						<rect x="54" y="308" width="59" height="72" />
+						<rect x="113" y="183" width="38" height="197" />
+						<rect x="151" y="227" width="40" height="153" />
+						<rect x="191" y="191" width="37" height="189" />
+						<rect x="228" y="311" width="47" height="69" />
+						<rect x="275" y="209" width="39" height="171" />
+						<rect x="314" y="303" width="60" height="77" />
+						<rect x="374" y="297" width="49" height="83" />
+						<rect x="423" y="212" width="69" height="168" />
+						<rect x="492" y="289" width="37" height="91" />
+						<rect x="529" y="305" width="48" height="75" />
+						<rect x="577" y="219" width="23" height="161" />
+						<rect x="700" y="264" width="37" height="116" />
+						<rect x="737" y="178" width="36" height="202" />
+						<rect x="773" y="246" width="42" height="134" />
+						<rect x="815" y="284" width="60" height="96" />
+						<rect x="875" y="290" width="68" height="90" />
+						<rect x="943" y="242" width="70" height="138" />
+						<rect x="1013" y="274" width="69" height="106" />
+						<rect x="1082" y="172" width="40" height="208" />
+						<rect x="1122" y="157" width="18" height="223" />
+						<rect x="1280" y="283" width="46" height="97" />
+						<rect x="1326" y="260" width="40" height="120" />
+						<rect x="1366" y="258" width="38" height="122" />
+						<rect x="1404" y="251" width="37" height="129" />
+						<rect x="1441" y="267" width="47" height="113" />
+						<rect x="1488" y="276" width="68" height="104" />
+						<rect x="1556" y="271" width="44" height="109" />
+					</g>
+
+					<g class="roof-links">
+						<line class="roof-link" x1="1102" y1="172" x2="1131" y2="157" />
+						<line class="roof-link" x1="171" y1="227" x2="210" y2="191" />
+						<line class="roof-link" x1="132" y1="183" x2="171" y2="227" />
+						<line class="roof-link" x1="132" y1="183" x2="210" y2="191" />
+						<line class="roof-link" x1="1131" y1="157" x2="1195" y2="50" />
+						<line class="roof-link" x1="458" y1="212" x2="588" y2="219" />
+						<line class="roof-link" x1="1102" y1="172" x2="1195" y2="50" />
+						<line class="roof-link" x1="294" y1="209" x2="458" y2="212" />
+						<line class="roof-link" x1="588" y1="219" x2="755" y2="178" />
+						<line class="roof-link" x1="755" y1="178" x2="652" y2="28" />
+					</g>
+
+					<g
+						class="skyline-landmark"
+						fill="none"
+						stroke="var(--gold)"
+						stroke-width="2.2"
+						filter="url(#glowStrong)"
+					>
+						<!-- tiered tower -->
+						<rect x="610" y="140" width="80" height="240" />
+						<rect x="628" y="100" width="44" height="40" />
+						<rect x="642" y="70" width="20" height="30" />
+						<line x1="652" y1="70" x2="652" y2="30" stroke-linecap="round" />
+
+						<!-- tapered tower -->
+						<polygon points="1150,380 1240,380 1225,110 1165,110" />
+						<line x1="1195" y1="110" x2="1195" y2="50" stroke-linecap="round" />
+					</g>
+
+					<g class="skyline-beacons" filter="url(#glowStrong)">
+						<circle class="skyline-beacon" cx="652" cy="28" r="3.4" />
+						<circle class="skyline-beacon" cx="1195" cy="50" r="3.4" />
+					</g>
+
+					<g class="roof-nodes" filter="url(#glowSoft)">
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="132"
+							cy="183"
+							r="2.4"
+							style="animation-delay: 2.77s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="171"
+							cy="227"
+							r="2.4"
+							style="animation-delay: 2.85s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="210"
+							cy="191"
+							r="2.4"
+							style="animation-delay: 2.68s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="294"
+							cy="209"
+							r="2.4"
+							style="animation-delay: 0.25s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="458"
+							cy="212"
+							r="2.4"
+							style="animation-delay: 1.78s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="588"
+							cy="219"
+							r="2.4"
+							style="animation-delay: 1.27s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="755"
+							cy="178"
+							r="2.4"
+							style="animation-delay: 1.59s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="1102"
+							cy="172"
+							r="2.4"
+							style="animation-delay: 0.39s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="1131"
+							cy="157"
+							r="2.4"
+							style="animation-delay: 0.58s"
+						/>
+					</g>
+
+					<g class="skyline-sparkle" filter="url(#glowSoft)">
+						<circle
+							class="glow-dot glow-dot--rose"
+							cx="946"
+							cy="163"
+							r="2.4"
+							style="animation-delay: 1.45s; animation-duration: 4s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="408"
+							cy="67"
+							r="2.4"
+							style="animation-delay: 1.96s; animation-duration: 2.9s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="934"
+							cy="97"
+							r="1.6"
+							style="animation-delay: 2.85s; animation-duration: 3.6s"
+						/>
+						<circle
+							class="glow-dot glow-dot--rose"
+							cx="1239"
+							cy="121"
+							r="2.6"
+							style="animation-delay: 1.97s; animation-duration: 2.9s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="50"
+							cy="155"
+							r="1.5"
+							style="animation-delay: 2.81s; animation-duration: 3.6s"
+						/>
+						<circle
+							class="glow-dot glow-dot--rose"
+							cx="970"
+							cy="103"
+							r="1.9"
+							style="animation-delay: 1.66s; animation-duration: 3.6s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="1043"
+							cy="21"
+							r="2.2"
+							style="animation-delay: 0.89s; animation-duration: 4.2s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="190"
+							cy="85"
+							r="1.8"
+							style="animation-delay: 0.92s; animation-duration: 2.7s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="241"
+							cy="122"
+							r="1.5"
+							style="animation-delay: 0.21s; animation-duration: 2.6s"
+						/>
+						<circle
+							class="glow-dot glow-dot--rose"
+							cx="1422"
+							cy="20"
+							r="1.7"
+							style="animation-delay: 0.17s; animation-duration: 3.2s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="1471"
+							cy="121"
+							r="1.9"
+							style="animation-delay: 0.64s; animation-duration: 3.7s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="709"
+							cy="42"
+							r="1.8"
+							style="animation-delay: 1.31s; animation-duration: 4.1s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="295"
+							cy="83"
+							r="2.2"
+							style="animation-delay: 1.49s; animation-duration: 3.4s"
+						/>
+						<circle
+							class="glow-dot glow-dot--gold"
+							cx="1416"
+							cy="163"
+							r="1.6"
+							style="animation-delay: 3.15s; animation-duration: 3.8s"
+						/>
+					</g>
+
+					<line
+						x1="0"
+						y1="380"
+						x2="1600"
+						y2="380"
+						stroke="var(--border)"
+						stroke-width="1"
+					/>
+				</svg>
+				<!-- <p class="skyline-caption">
+					New York City &nbsp;&middot;&nbsp; Bronx-born, building from the
+					skyline that raised me
+				</p> -->
 			</div>
 		</section>
 
@@ -984,95 +1361,45 @@
 			<div class="container">
 				<div class="polaroid-grid">
 					<div class="polaroid" style="--rot: -4deg">
-						<div class="polaroid-inner">
-							<div class="polaroid-front">
-								<div class="polaroid-img">
-									<img
-										class="gold"
-										src="src/img/te_engineer_mentor.jpeg"
-										alt=""
-									/>
-								</div>
-							</div>
-							<div class="polaroid-back">
-								<p class="polaroid-caption">
-									mentored TE Connectivity's interns for National Intern Day
-									2025
-								</p>
-							</div>
+						<div class="polaroid-img">
+							<img src="src/img/te_engineer_mentor.jpeg" alt="" />
 						</div>
+						<p class="polaroid-caption">
+							mentored TE Connectivity's interns for National Intern Day 2025
+						</p>
 					</div>
 					<div class="polaroid" style="--rot: 2.5deg">
-						<div class="polaroid-inner">
-							<div class="polaroid-front">
-								<div class="polaroid-img">
-									<img
-										class="gold"
-										src="src/img/sims_honors_presentation.jpeg"
-										alt=""
-									/>
-								</div>
-							</div>
-							<div class="polaroid-back">
-								<p class="polaroid-caption">
-									presented my UX & gaming research on The Sims at UA Franke
-									Honors Pinnacle 2024
-								</p>
-							</div>
+						<div class="polaroid-img">
+							<img src="src/img/sims_honors_presentation.jpeg" alt="" />
 						</div>
+						<p class="polaroid-caption">
+							presented my UX & gaming research on The Sims at UA Franke Honors
+							Pinnacle 2024
+						</p>
 					</div>
 					<div class="polaroid" style="--rot: -1.5deg">
-						<div class="polaroid-inner">
-							<div class="polaroid-front">
-								<div class="polaroid-img">
-									<img
-										class="gold"
-										src="src/img/girls_who_code_selfie.jpeg"
-										alt=""
-									/>
-								</div>
-							</div>
-							<div class="polaroid-back">
-								<p class="polaroid-caption">rocking Girls Who Code swag</p>
-							</div>
+						<div class="polaroid-img">
+							<img src="src/img/girls_who_code_selfie.jpeg" alt="" />
 						</div>
+						<p class="polaroid-caption">rocking Girls Who Code swag</p>
 					</div>
 					<div class="polaroid" style="--rot: 3.5deg">
-						<div class="polaroid-inner">
-							<div class="polaroid-front">
-								<div class="polaroid-img">
-									<img
-										class="gold"
-										src="src/img/college_of_science_commencement.JPG"
-										alt=""
-									/>
-								</div>
-							</div>
-							<div class="polaroid-back">
-								<p class="polaroid-caption">
-									graduated from the College of Science at the University of
-									Arizona (2025)
-								</p>
-							</div>
+						<div class="polaroid-img">
+							<img src="src/img/college_of_science_commencement.JPG" alt="" />
 						</div>
+						<p class="polaroid-caption">
+							graduated from the College of Science at the University of Arizona
+							(2025)
+						</p>
 					</div>
 					<div class="polaroid" style="--rot: -2.5deg">
-						<div class="polaroid-inner">
-							<div class="polaroid-front">
-								<div class="polaroid-img">
-									<img
-										src="src/img/computer_science_commencement.jpeg"
-										alt=""
-									/>
-								</div>
-							</div>
-							<div class="polaroid-back">
-								<p class="polaroid-caption">
-									celebrating graduation with the Department of Computer Science
-									at the University of Arizona (2025)
-								</p>
-							</div>
+						<div class="polaroid-img">
+							<img src="src/img/computer_science_commencement.jpeg" alt="" />
 						</div>
+						<p class="polaroid-caption">
+							celebrating graduation with the Department of Computer Science at
+							the University of Arizona (2025)
+						</p>
 					</div>
 				</div>
 			</div>
@@ -1080,34 +1407,155 @@
 
 		<!-- ── ABOUT ── -->
 		<section id="about">
+			<!-- NYC skyline background, sun rising behind the rooftops -->
+			<svg
+				class="skyline-bg"
+				viewBox="0 0 1440 200"
+				xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true"
+			>
+				<!-- stars -->
+				<g fill="var(--gold-light)" opacity=".3">
+					<circle cx="210" cy="28" r="1.2" />
+					<circle cx="460" cy="18" r="1.5" />
+					<circle cx="690" cy="32" r="1" />
+					<circle cx="910" cy="22" r="1.2" />
+					<circle cx="1160" cy="30" r="1" />
+				</g>
+
+				<!-- sun -->
+				<circle cx="1330" cy="48" r="70" fill="var(--gold)" opacity=".07" />
+				<circle cx="1330" cy="48" r="48" fill="var(--gold)" opacity=".15" />
+				<circle
+					cx="1330"
+					cy="48"
+					r="32"
+					fill="var(--gold-light)"
+					opacity=".5"
+				/>
+				<circle
+					cx="1330"
+					cy="48"
+					r="20"
+					fill="var(--gold-light)"
+					opacity=".85"
+				/>
+				<g
+					stroke="var(--gold)"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					opacity=".4"
+				>
+					<line x1="1358" y1="48" x2="1374" y2="48" />
+					<line x1="1350" y1="68" x2="1361" y2="79" />
+					<line x1="1330" y1="76" x2="1330" y2="92" />
+					<line x1="1310" y1="68" x2="1299" y2="79" />
+					<line x1="1302" y1="48" x2="1286" y2="48" />
+					<line x1="1310" y1="28" x2="1299" y2="17" />
+					<line x1="1330" y1="20" x2="1330" y2="4" />
+					<line x1="1350" y1="28" x2="1361" y2="17" />
+				</g>
+
+				<!-- buildings — faint ghost silhouette, barely darker than the page -->
+				<g fill="var(--text-muted)" opacity=".07">
+					<rect x="0" y="150" width="72" height="50" />
+					<rect x="76" y="110" width="48" height="90" />
+					<rect x="130" y="68" width="40" height="132" />
+					<rect x="176" y="90" width="52" height="110" />
+					<rect x="184" y="70" width="36" height="22" />
+					<rect x="190" y="50" width="24" height="22" />
+					<rect x="200" y="14" width="5" height="38" />
+					<rect x="234" y="92" width="65" height="108" />
+					<rect x="305" y="118" width="44" height="82" />
+					<rect x="355" y="82" width="32" height="118" />
+					<rect x="393" y="124" width="52" height="76" />
+					<rect x="452" y="98" width="38" height="102" />
+					<rect x="497" y="118" width="55" height="82" />
+					<rect x="558" y="100" width="28" height="100" />
+					<rect x="593" y="138" width="65" height="62" />
+					<rect x="665" y="112" width="38" height="88" />
+					<rect x="709" y="130" width="70" height="70" />
+					<rect x="786" y="102" width="34" height="98" />
+					<rect x="827" y="120" width="44" height="80" />
+					<rect x="877" y="148" width="60" height="52" />
+					<rect x="944" y="128" width="34" height="72" />
+					<rect x="985" y="110" width="50" height="90" />
+					<rect x="1042" y="132" width="68" height="68" />
+					<rect x="1117" y="118" width="34" height="82" />
+					<rect x="1158" y="142" width="58" height="58" />
+					<rect x="1222" y="125" width="42" height="75" />
+					<rect x="1270" y="144" width="62" height="56" />
+					<rect x="1340" y="130" width="45" height="70" />
+					<rect x="1392" y="148" width="50" height="52" />
+				</g>
+
+				<!-- lit windows — gold flecks glowing through the silhouette -->
+				<g fill="var(--gold)">
+					<rect x="82" y="118" width="5" height="4" opacity=".42" />
+					<rect x="94" y="118" width="5" height="4" opacity=".32" />
+					<rect x="82" y="130" width="5" height="4" opacity=".46" />
+					<rect x="106" y="125" width="5" height="4" opacity=".32" />
+					<rect x="136" y="78" width="5" height="4" opacity=".46" />
+					<rect x="150" y="78" width="5" height="4" opacity=".55" />
+					<rect x="136" y="92" width="5" height="4" opacity=".38" />
+					<rect x="162" y="86" width="5" height="4" opacity=".42" />
+					<rect x="150" y="106" width="5" height="4" opacity=".5" />
+					<rect x="240" y="100" width="5" height="4" opacity=".52" />
+					<rect x="254" y="100" width="5" height="4" opacity=".32" />
+					<rect x="278" y="104" width="5" height="4" opacity=".46" />
+					<rect x="240" y="116" width="5" height="4" opacity=".38" />
+					<rect x="268" y="120" width="5" height="4" opacity=".55" />
+					<rect x="278" y="128" width="5" height="4" opacity=".32" />
+					<rect x="254" y="130" width="5" height="4" opacity=".42" />
+					<rect x="361" y="92" width="4" height="3" opacity=".5" />
+					<rect x="372" y="100" width="4" height="3" opacity=".36" />
+					<rect x="361" y="112" width="4" height="3" opacity=".46" />
+					<rect x="458" y="108" width="5" height="4" opacity=".46" />
+					<rect x="472" y="108" width="5" height="4" opacity=".32" />
+					<rect x="458" y="122" width="5" height="4" opacity=".54" />
+					<rect x="482" y="116" width="5" height="4" opacity=".38" />
+					<rect x="562" y="110" width="4" height="3" opacity=".42" />
+					<rect x="574" y="118" width="4" height="3" opacity=".52" />
+					<rect x="562" y="128" width="4" height="3" opacity=".36" />
+					<rect x="671" y="120" width="5" height="4" opacity=".46" />
+					<rect x="684" y="120" width="5" height="4" opacity=".32" />
+					<rect x="671" y="134" width="5" height="4" opacity=".52" />
+					<rect x="792" y="112" width="4" height="3" opacity=".42" />
+					<rect x="804" y="120" width="4" height="3" opacity=".56" />
+					<rect x="792" y="132" width="4" height="3" opacity=".32" />
+					<rect x="814" y="128" width="4" height="3" opacity=".44" />
+					<rect x="991" y="118" width="5" height="4" opacity=".46" />
+					<rect x="1005" y="118" width="5" height="4" opacity=".36" />
+					<rect x="1020" y="126" width="5" height="4" opacity=".52" />
+					<rect x="991" y="134" width="5" height="4" opacity=".32" />
+					<rect x="1122" y="126" width="4" height="3" opacity=".42" />
+					<rect x="1134" y="132" width="4" height="3" opacity=".5" />
+				</g>
+			</svg>
+
 			<div class="container">
 				<p class="label reveal">About</p>
 				<div class="about-grid">
 					<div class="reveal">
-						<h2 class="about-headline">
-							Building software <em>solutions</em><br />for tomorrow.
-						</h2>
+						<h2 class="about-headline">About <em>Genesis</em>.<br /></h2>
 						<div class="about-body">
 							<p>
 								From the Bronx to the cloud, I'm a software engineer focused on
 								automation, infrastructure, and the data systems that keep
-								organizations moving. Whether it's automating repetitive
-								processes, developing internal tools, or creating data workflows
-								that support decision-making, I'm motivated by solving practical
-								problems with thoughtful engineering.
+								organizations moving.
 							</p>
 							<p>
-								I earned my Computer Science degree from the University of
-								Arizona and am continuing my studies in Information Science with
-								a machine learning focus. At TE Connectivity, I build automation
-								solutions, data pipelines, and internal platforms that support
-								engineering and business operations at scale.
+								I earned my Bachelor degree in Computer Science from the
+								University of Arizona and am continuing my studies in
+								Information Science with Master degree specialization in machine
+								learning. At TE Connectivity, I build automation solutions, data
+								pipelines, and internal platforms that support engineering and
+								business operations at scale.
 							</p>
 							<p>
 								Outside of engineering, I invest heavily in community. Through
 								mentorship, speaking, technical writing, and initiatives like
-								Her Code Kitchen, I aim to help create the opportunities and
-								support systems that helped me get here.
+								Her Code Kitchen.
 							</p>
 						</div>
 					</div>
@@ -1139,7 +1587,7 @@
 		</section>
 
 		<!-- ── EXPERTISE ── -->
-		<section id="expertise">
+		<!-- <section id="expertise">
 			<div class="container">
 				<p class="label reveal">Expertise</p>
 				<div class="expertise-grid">
@@ -1241,7 +1689,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- ── PROJECTS ── -->
 		<section id="projects">
@@ -1331,7 +1779,7 @@
 		</section>
 
 		<!-- ── COMMUNITY ── -->
-		<section id="community">
+		<!-- <section id="community">
 			<div class="container">
 				<p class="label reveal">Community</p>
 				<div class="community-intro reveal">
@@ -1417,7 +1865,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- ── CONTACT ── -->
 		<section id="contact">
@@ -1466,13 +1914,13 @@
 					>
 				</div>
 				<footer class="reveal">
-					<span class="footer-name">Genesis R. &mdash; New York City</span>
+					<span class="footer-name">Genesis B. &mdash; New York City</span>
 					<div class="visit-counter">
 						<span class="visit-num" id="visit-count">–</span>
 						<span class="visit-label">visitors</span>
 					</div>
 					<span class="footer-note"
-						>Built with intention &nbsp;·&nbsp; &copy; 2026</span
+						>Built with love &nbsp;·&nbsp; &copy; 2026</span
 					>
 				</footer>
 			</div>
@@ -1485,8 +1933,8 @@
 				const canvas = document.getElementById("constellation");
 				const ctx = canvas.getContext("2d");
 
-				const GOLD = { r: 212, g: 168, b: 67 };
-				const PALE = { r: 240, g: 200, b: 122 };
+				const GOLD = { r: 168, g: 120, b: 42 };
+				const ROSE = { r: 194, g: 96, b: 124 };
 				const N_STARS = 85;
 				const LINK_DIST = 145;
 
@@ -1508,6 +1956,7 @@
 						b: Math.random() * 0.55 + 0.3,
 						ts: Math.random() * 0.012 + 0.004,
 						tp: Math.random() * Math.PI * 2,
+						hue: Math.random() < 0.74 ? GOLD : ROSE,
 					}));
 				}
 
@@ -1523,7 +1972,7 @@
 							const dy = stars[i].y - stars[j].y;
 							const d = Math.sqrt(dx * dx + dy * dy);
 							if (d < LINK_DIST) {
-								const a = (1 - d / LINK_DIST) * 0.16;
+								const a = (1 - d / LINK_DIST) * 0.22;
 								ctx.beginPath();
 								ctx.moveTo(stars[i].x, stars[i].y);
 								ctx.lineTo(stars[j].x, stars[j].y);
@@ -1537,6 +1986,7 @@
 					/* stars */
 					stars.forEach((st) => {
 						const brt = st.b + Math.sin(s * st.ts * 60 + st.tp) * 0.18;
+						const c = st.hue;
 
 						/* glow halo */
 						const g = ctx.createRadialGradient(
@@ -1547,11 +1997,8 @@
 							st.y,
 							st.r * 5,
 						);
-						g.addColorStop(
-							0,
-							`rgba(${PALE.r},${PALE.g},${PALE.b},${brt * 0.35})`,
-						);
-						g.addColorStop(1, `rgba(${PALE.r},${PALE.g},${PALE.b},0)`);
+						g.addColorStop(0, `rgba(${c.r},${c.g},${c.b},${brt * 0.3})`);
+						g.addColorStop(1, `rgba(${c.r},${c.g},${c.b},0)`);
 						ctx.beginPath();
 						ctx.arc(st.x, st.y, st.r * 5, 0, Math.PI * 2);
 						ctx.fillStyle = g;
@@ -1560,7 +2007,7 @@
 						/* core */
 						ctx.beginPath();
 						ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
-						ctx.fillStyle = `rgba(${PALE.r},${PALE.g},${PALE.b + 20},${brt})`;
+						ctx.fillStyle = `rgba(${c.r},${c.g},${c.b},${Math.min(brt + 0.25, 1)})`;
 						ctx.fill();
 
 						/* drift */
